@@ -47,15 +47,12 @@ $ wwctl container import docker://warewulf/rocky rocky-8
 $ wwctl container list
 $ sudo wwctl kernel list
 $ wwctl container import docker://registry.opensuse.org/science/warewulf/tumbleweed/containerfile/kernel:latest tw
-$ wwctl kernel list 
-
-$ kernel import -DC tw
 $ wwctl kernel import -DC tw
-$ wwctl kernel list 
 $ wwctl node list -a
+
+$ wwctl kernel list 
 $ wwctl node add --netdev ens37 --hwaddr 00:0c:29:FA:A6:17 --ipaddr 192.168.160.210 --netmask 255.255.255.0 n01 
                     H/O  interface   mac address of nw machine     ip for nw machine                    name of machine
-
 
 $ wwctl node list -a
 $ wwctl container exec rocky-8 /bin/bash
