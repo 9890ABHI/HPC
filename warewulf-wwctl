@@ -60,6 +60,7 @@ $ wwctl container exec rocky-8 /bin/bash
 > yum install passwd 
 > passwd root 
     # set password for root
+> exit
 
 $ wwctl node set --container rocky-8 n01
 $ wwctl node list -a
