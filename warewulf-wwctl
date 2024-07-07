@@ -18,7 +18,7 @@ $ ip r
 > check your ip of hostonly and nat 
 
 in case of mirror error
-$ cd /etc/yum.repos.d/ &&  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* $$ sentenforce 0
+$ cd /etc/yum.repos.d/ &&  sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-* $$ setenforce 0
 $ cd -
 
 $ yum install -y https://repo.ctrliq.com/rhel/8/ciq-release.rpm 
