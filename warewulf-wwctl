@@ -1,0 +1,64 @@
+
+$ vi /etc/selinux/config
+> disabled
+
+$ systemctl stop firewalld.service 
+$ systemctl disable firewalld.service 
+$ init 6
+
+
+
+$ ip r
+$ yum install -y https://repo.ctrliq.com/rhel/8/ciq-release.rpm 
+$ yum install warewulf 
+$ vi /etc/warewulf/warewulf.conf 
+
+    ipaddr: 192.168.253.160  # ip of host-only ip 
+    netmask: 255.255.255.0
+    network: 192.168.253.0   # netowrk of hostonly ip
+
+    dhcp:
+    enabled: true
+    range start: 192.168.253.190    # range for of hostonly ip start 
+    range end: 192.168.253.250      # range for of hostonly ip end
+    systemd name: dhcpd
+
+
+
+$ wwctl configure --allsudo systemctl status dhcpd
+$ wwctl configure --all sudo systemctl status dhcpd
+$ systemctl status tftp
+$ systemctl status nfs-server
+$ systemctl enable --now tftp 
+$ systemctl start tftp 
+$ systemctl enable --now warewulfd
+
+$ wwctl server status
+$ wwctl container import docker://warewulf/rocky rocky-8
+$ wwctl container list
+$ sudo wwctl kernel list
+$ wwctl container import docker://registry.opensuse.org/science/warewulf/tumbleweed/containerfile/kernel:latest tw
+$ wwctl kernel list 
+
+$ kernel import -DC tw
+$ wwctl kernel import -DC tw
+$ wwctl kernel list 
+$ wwctl node list -a
+$ wwctl node add --netdev ens37 --hwaddr 00:0c:29:FA:A6:17 --ipaddr 192.168.160.210 --netmask 255.255.255.0 n01 
+                    H/O  interface   mac address of nw machine     ip for nw machine                    name of machine
+
+
+$ wwctl node list -a
+$ wwctl container exec rocky-8 /bin/bash
+> yum install passswd 
+> passwd root 
+    # set password for root
+
+$ wwctl node set --container rocky-8 n01
+$ wwctl node list -a
+
+
+
+
+
+
