@@ -35,8 +35,6 @@ $ vi /etc/warewulf/warewulf.conf
     systemd name: dhcpd
 
 
-
-$ wwctl configure --allsudo systemctl status dhcpd
 $ wwctl configure --all sudo systemctl status dhcpd
 $ systemctl status tftp
 $ systemctl status nfs-server
